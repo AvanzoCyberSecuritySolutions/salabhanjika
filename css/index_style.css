@@ -202,6 +202,7 @@
   width: 45%;      
   overflow: hidden;
   z-index: 2;
+ 
 }
 
 .image-slider .slides {
@@ -270,6 +271,25 @@
 }
 
 /* Responsive */
+@media (min-width: 1500px) {
+  .image-slider {
+    width: 40%;
+    left: 8%;
+    height: 500px;  /* adjust this to match about-box */
+  }
+
+  .image-slider img {
+    height: 100%;   /* make images fit the slider height */
+    object-fit: cover; /* maintain aspect ratio, crop if needed */
+  }
+  .about-box {
+    transform: translateX(-12%);
+    width: 55%;
+  
+  }
+}
+
+
 @media (max-width: 900px) {
   .about-container {
     flex-direction: column;
