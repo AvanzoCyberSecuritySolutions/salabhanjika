@@ -132,4 +132,138 @@
       .menu-toggle {
         display: none;
       }
+    }* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 200vh; /* for scroll demo */
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    /* Logo */
+    .logo img {
+      height: 90px;
+      transition: height 0.3s ease, margin-left 0.3s ease;
+      margin-left: 120px;
+    }
+
+    /* Navbar */
+    nav {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      padding: 8px 5px;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #0077cc;
+    }
+
+    /* Dropdown */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      /* top: 35px; */
+      top: 100%;
+      left: 0;
+      background: white;
+      list-style: none;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      min-width: 160px;
+      z-index: 999;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li a {
+      padding: 10px 15px;
+      display: block;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    nav ul li ul li a:hover {
+      background: #f2f2f2;
+    }
+
+    /* Scroll shrink */
+    header.shrink .logo img {
+      height: 60px;
+      margin-left: 40px;
+    }
+
+    header.shrink nav {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 15px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 22px;
+        margin-right: 20px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
     }
