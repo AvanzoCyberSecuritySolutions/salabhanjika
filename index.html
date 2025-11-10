@@ -285,47 +285,139 @@
   </section>
 
 <section class="final-section">
-    <h2>Blessed By</h2>
-    <div class="line"></div><br><br>
+  <h2>Blessed By</h2>
+  <div class="line"></div>
 
-    <div class="blessed-container">
-    <!-- Left Column -->
+  <!-- 1️⃣ Left Image - Right Content -->
+  <div class="blessed-container">
     <div class="blessed-left">
-      <img src="images/IMG_4426-2-scaled.jpg" alt="Blessed Person" />
+      <img src="images/IMG_4426-2-scaled.jpg" alt="Blessed Person">
     </div>
-
-    <!-- Right Column -->
     <div class="blessed-right">
       <div class="person">
         <p><strong>Late. Manikkath Venugopal Menon</strong><br>
-          Mr. Manikketh Venugopal Menon was a distinguished banker and community leader from Thrissur. A Zoology graduate, he served in the United Bank of India and retired as Deputy Regional Manager. He later became Director of Avanzo Cyber Security Solutions and Trustee of Avanzo Charitable Trust. His life of dedication and integrity continues to inspire all who knew him, until his passing in 2018.
+          Mr. Manikketh Venugopal Menon was a distinguished banker and community leader from Thrissur. 
+          A Zoology graduate, he served in the United Bank of India and retired as Deputy Regional Manager. 
+          He later became Director of Avanzo Cyber Security Solutions and Trustee of Avanzo Charitable Trust. 
+          His life of dedication and integrity continues to inspire all who knew him, until his passing in 2018.
         </p>
-      </div>
-      <div class="person">
-        <p><strong>Late. Sri. K K Varrier</strong><br>
-Mr. K. K. Varrier was a renowned Kerala mural artist known for his exceptional contributions to traditional art. He founded the Indian School of Arts in Kochi and Chitrageham in Guruvayur, nurturing generations of artists. His works reflect the depth and spirituality of Kerala’s mural heritage. His artistic vision continues to inspire many, even after his passing in 2010.        </p>
-      </div>
-      <div class="bottom-image">
-        <img src="images/gallery_ezine_5a349f81c7a90_image.jpg" alt="Blessed Image" />
       </div>
     </div>
   </div>
-  <br><br>
-  <div class="blessed-container">
-    <!-- Left Column -->
-    <div class="blessed-left">
-<img src="images/imagesvijaya.jpeg" alt="Blessed Person" style="width:300px; height:auto; border-radius:10px;" />
-    </div>
 
-    <!-- Right Column -->
+  <!-- 2️⃣ Right Image - Left Content -->
+  <div class="blessed-container">
+    <div class="blessed-left">
+      <img src="images/gallery_ezine_5a349f81c7a90_image.jpg" alt="Blessed Image">
+    </div>
+    <div class="blessed-right">
+      <div class="person">
+        <p><strong>Late. Sri. K K Varrier</strong><br>
+          Mr. K. K. Varrier was a renowned Kerala mural artist known for his exceptional contributions 
+          to traditional art. He founded the Indian School of Arts in Kochi and Chitrageham in Guruvayur, 
+          nurturing generations of artists. His works reflect the depth and spirituality of Kerala’s 
+          mural heritage. His artistic vision continues to inspire many, even after his passing in 2010.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3️⃣ Left Image - Right Content -->
+  <div class="blessed-container">
+    <div class="blessed-left">
+      <img src="images/imagesvijaya.jpeg" alt="Blessed Person">
+    </div>
     <div class="blessed-right">
       <div class="person">
         <p><strong>Late. Vijayakumar Menon</strong><br>
-          Vijayakumar Menon (3 May 1946 – 1 November 2022) was an Indian art critic, writer, translator, and art teacher from Kerala. He was honored with several awards, including the Kerala Lalithakala Akademi Award and the Kesari Puraskaram. <br>After working at FACT, he pursued Art History at MS University, Baroda, and later taught in various fine arts institutions. Menon lived a simple, spiritual life at Jnana Ashram, Wadakkanchery, until his passing in 2022.
+          Vijayakumar Menon (3 May 1946 – 1 November 2022) was an Indian art critic, writer, translator, 
+          and art teacher from Kerala. He was honored with several awards, including the Kerala Lalithakala 
+          Akademi Award and the Kesari Puraskaram. After working at FACT, he pursued Art History at 
+          MS University, Baroda, and later taught in various fine arts institutions. Menon lived a simple, 
+          spiritual life at Jnana Ashram, Wadakkanchery, until his passing in 2022.
         </p>
       </div>
-
+    </div>
+  </div>
 </section>
+
+<style>
+.final-section {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.final-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #222;
+}
+
+.line {
+  width: 100px;
+  height: 3px;
+  background-color: #0078ff;
+  margin: 15px auto 40px;
+}
+
+.blessed-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.blessed-left, .blessed-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.blessed-left img, 
+.blessed-right img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.person {
+  margin: 10px 0;
+}
+
+.person p {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.person strong {
+  font-size: 1.1rem;
+  color: #000;
+}
+
+/* Alternate layout styles */
+.blessed-container:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blessed-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .blessed-left, .blessed-right {
+    width: 100%;
+  }
+  .blessed-left img, 
+  .blessed-right img {
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+}
+</style>
+
 
 <section class="enroll-section">
   <div class="enroll-container">
