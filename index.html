@@ -47,10 +47,89 @@
   <div class="hero-left">
     <h1>Salabhanjika Studio for Arts and Performance</h1>
   </div>
+
   <div class="hero-right">
-    <img src="images/logo1.png" alt="Big Logo">
+    <div class="coins">
+      <span class="coin c1"></span>
+      <span class="coin c2"></span>
+      <span class="coin c3"></span>
+      <span class="coin c4"></span>
+      <span class="coin c5"></span>
+      <span class="coin c6"></span>
+      <span class="coin c7"></span>
+      <span class="coin c8"></span>
+      <span class="coin c9"></span>
+    </div>
   </div>
 </section>
+
+
+
+<style>
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 6%;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-left h1 {
+  font-size: 3rem;
+  max-width: 520px;
+}
+
+.hero-right {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.coins {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Coin base style with logo */
+.coin {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff3b0, #facc15 40%, #eab308 70%, #a16207);
+  box-shadow: inset 0 0 8px rgba(255,255,255,0.6), 0 10px 20px rgba(234,179,8,0.35);
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: float 6s ease-in-out infinite, spin 5s linear infinite;
+}
+
+/* Assign logos to each coin */
+.c1 { width: 70px; height: 70px; top: 5%; left: 10%; background-image: url('images/devadasyam-logo.jpg'); animation-delay: 0s; }
+.c2 { width: 65px; height: 65px; top: 15%; right: 15%; background-image: url('images/logo2.png'); animation-delay: 0.5s; }
+.c3 { width: 60px; height: 60px; top: 30%; left: 0%; background-image: url('images/logo3.png'); animation-delay: 1s; }
+.c4 { width: 70px; height: 70px; top: 40%; right: 5%; background-image: url('images/logo4.png'); animation-delay: 1.5s; }
+.c5 { width: 65px; height: 65px; bottom: 10%; left: 15%; background-image: url('images/logo5.png'); animation-delay: 2s; }
+.c6 { width: 60px; height: 60px; top: 20%; right: 30%; background-image: url('images/logo6.png'); animation-delay: 2.5s; }
+.c7 { width: 70px; height: 70px; top: 0%; right: 20%; background-image: url('images/logo7.png'); animation-delay: 3s; }
+.c8 { width: 60px; height: 60px; bottom: 25%; left: 5%; background-image: url('images/logo8.png'); animation-delay: 3.5s; }
+.c9 { width: 65px; height: 65px; top: 55%; right: 15%; background-image: url('images/logo9.png'); animation-delay: 4s; }
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(15deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Spin animation */
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+</style>
 
 <section class="mission-section">
   <!-- Left column -->
