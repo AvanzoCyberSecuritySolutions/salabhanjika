@@ -7,6 +7,166 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/index_style.css">
   <link rel="stylesheet" href="css/production.css">
+
+
+<style>
+
+  /* CENTER WRAPPER */
+.center-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* slightly bigger text circle */
+.center-text {
+  width: 180px;
+  height: 180px;
+}
+
+  /* ================= COINS CONTAINER ================= */
+.coins {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+/* ================= COIN WRAPPER (POSITION) ================= */
+.coin-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* ================= CIRCULAR TEXT ================= */
+.circle-text {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.circle-text text {
+  font-size: 14px;
+  letter-spacing: 3px;
+  fill: #7c2d12;
+  font-weight: 600;
+}
+
+/* ================= COIN BASE (OLD STYLE) ================= */
+.coin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff7c2,
+    #facc15 35%,
+    #eab308 70%,
+    #a16207
+  );
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 85% 85%;
+
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(234,179,8,0.45);
+
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* ================= CENTER COIN ================= */
+.c5 {
+  width: 130px;
+  height: 130px;
+  background-image: url("images/logo5.png");
+}
+
+/* ================= OUTER COINS SIZE + LOGO ================= */
+.c1, .c3, .c6, .c8 {
+  width: 110px;
+  height: 110px;
+}
+
+.c2, .c4, .c7, .c9 {
+  width: 105px;
+  height: 105px;
+}
+
+.c1 { background-image: url("images/devadasyam-logo.jpg"); }
+.c2 { background-image: url("images/logo2.png"); }
+.c3 { background-image: url("images/logo3.png"); }
+.c4 { background-image: url("images/logo4.png"); }
+.c6 { background-image: url("images/logo6.png"); }
+.c7 { background-image: url("images/logo7.png"); }
+.c8 { background-image: url("images/logo8.png"); }
+.c9 { background-image: url("images/logo9.png"); }
+
+/* ================= FLOWER POSITIONS ================= */
+.c1-wrap { transform: translate(-50%, -50%) rotate(0deg)   translate(220px); }
+.c2-wrap { transform: translate(-50%, -50%) rotate(45deg)  translate(220px); }
+.c3-wrap { transform: translate(-50%, -50%) rotate(90deg)  translate(220px); }
+.c4-wrap { transform: translate(-50%, -50%) rotate(135deg) translate(220px); }
+.c6-wrap { transform: translate(-50%, -50%) rotate(180deg) translate(220px); }
+.c7-wrap { transform: translate(-50%, -50%) rotate(225deg) translate(220px); }
+.c8-wrap { transform: translate(-50%, -50%) rotate(270deg) translate(220px); }
+.c9-wrap { transform: translate(-50%, -50%) rotate(315deg) translate(220px); }
+
+
+/* text-only coin (keeps gold coin shape) */
+.text-coin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+  width: 105px;
+  height: 105px;
+
+  /* keep coin shape */
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff7c2,
+    #facc15 35%,
+    #eab308 70%,
+    #a16207
+  );
+
+
+
+
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(234,179,8,0.45);
+
+  /* text styling */
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #7c2d12;
+  text-align: center;
+  padding: 10px;
+}
+
+</style>
+
+
+
+
 </head>
 <body>
   <header id="header">
@@ -43,201 +203,133 @@
     </nav>
   </header>
 
-  <section class="hero">
+
+<section class="hero">
   <div class="hero-left">
     <h1>Salabhanjika Studio for Arts and Performance</h1>
   </div>
 
   <div class="hero-right">
     <div class="coins">
-      <span class="coin c1"></span>
-      <span class="coin c2"></span>
-      <span class="coin c3"></span>
-      <span class="coin c4"></span>
-      <span class="coin c5"></span>
-      <span class="coin c6"></span>
-      <span class="coin c7"></span>
-      <span class="coin c8"></span>
-      <span class="coin c9"></span>
+
+      <!-- CENTER COIN -->
+      <div class="center-wrap">
+  <svg class="circle-text center-text" viewBox="0 0 200 200">
+    <path id="centerPath" fill="none"
+      d="M100,100 m-85,0
+         a85,85 0 1,1 170,0
+         a85,85 0 1,1 -170,0"/>
+    <text>
+      <textPath href="#centerPath" startOffset="50%" text-anchor="middle">
+        SALABHANJIKA
+      </textPath>
+    </text>
+  </svg>
+
+  <span class="coin text-coin">Salabhanjika</span>
+</div>
+
+
+      <!-- COIN 1 -->
+      <a href="https://devadasyam.salabhanjika.com/" target="_blank"
+         class="coin-wrap c1-wrap">
+        <svg class="circle-text" viewBox="0 0 200 200">
+          <path id="p1" fill="none"
+            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          <text><textPath href="#p1" startOffset="50%" text-anchor="middle">
+            DEVADASYAM
+          </textPath></text>
+        </svg>
+        <span class="coin c1"></span>
+      </a>
+
+      <!-- COIN 2 -->
+      <a class="coin-wrap c2-wrap">
+        <svg class="circle-text" viewBox="0 0 200 200">
+          <path id="p2" fill="none"
+            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          <text><textPath href="#p2" startOffset="50%" text-anchor="middle">
+            SALABHANJIKA
+          </textPath></text>
+        </svg>
+        <span class="coin text-coin">Salabhanjika</span>
+      </a>
+
+      <!-- COIN 3 -->
+      <a class="coin-wrap c3-wrap">
+        <svg class="circle-text" viewBox="0 0 200 200">
+          <path id="p3" fill="none"
+            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          <text><textPath href="#p3" startOffset="50%" text-anchor="middle">
+            CLASSICAL ARTS
+          </textPath></text>
+        </svg>
+        <span class="coin text-coin">Classical arts</span>
+      </a>
+
+      <!-- COIN 4 -->
+      <a class="coin-wrap c4-wrap">
+        <svg class="circle-text" viewBox="0 0 200 200">
+          <path id="p4" fill="none"
+            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          <text><textPath href="#p4" startOffset="50%" text-anchor="middle">
+            PERFORMANCE
+          </textPath></text>
+        </svg>
+        <span class="coin text-coin">Performance</a>span>
+      </a>
+
+      <!-- COIN 6 -->
+      <a class="coin-wrap c6-wrap">
+        <svg class="circle-text" viewBox="0 0 200 200">
+          <path id="p6" fill="none"
+            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          <text><textPath href="#p6" startOffset="50%" text-anchor="middle">
+            TRADITION
+          </textPath></text>
+        </svg>
+        <span class="coin text-coin">Tradition</span>
+      </a>
+
+      <!-- COIN 7 -->
+      <a class="coin-wrap c7-wrap">
+        <svg class="circle-text" viewBox="0 0 200 200">
+          <path id="p7" fill="none"
+            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          <text><textPath href="#p7" startOffset="50%" text-anchor="middle">
+            CULTURE
+          </textPath></text>
+        </svg>
+        <span class="coin text-coin">Culture</span>
+      </a>
+
+      <!-- COIN 8 -->
+      <a class="coin-wrap c8-wrap">
+        <svg class="circle-text" viewBox="0 0 200 200">
+          <path id="p8" fill="none"
+            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          <text><textPath href="#p8" startOffset="25%" text-anchor="middle">
+            DANCE
+          </textPath></text>
+        </svg>
+        <span class="coin text-coin">Dance</span>
+      </a>
+
+      <!-- COIN 9 -->
+      <a class="coin-wrap c9-wrap">
+        <svg class="circle-text" viewBox="0 0 200 200">
+          <path id="p9" fill="none"
+            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          <text><textPath href="#p9" startOffset="50%" text-anchor="middle">
+            MUSIC
+          </textPath></text>
+        </svg>
+        <span class="coin text-coin">Music</span>
+      </a>
+
     </div>
   </div>
 </section>
-
-
-
-<!-- <style>
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 6%;
-  color: white;
-  overflow: hidden;
-}
-
-.hero-left h1 {
-  font-size: 3rem;
-  max-width: 520px;
-}
-
-.hero-right {
-  position: relative;
-  width: 500px;
-  height: 500px;
-}
-
-.coins {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* Coin base style with logo */
-.coin {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff3b0, #facc15 40%, #eab308 70%, #a16207);
-  box-shadow: inset 0 0 8px rgba(255,255,255,0.6), 0 10px 20px rgba(234,179,8,0.35);
-  background-size: 60% 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation: float 6s ease-in-out infinite, spin 5s linear infinite;
-}
-
-/* Assign logos to each coin */
-.c1 { width: 70px; height: 70px; top: 5%; left: 10%; background-image: url('images/devadasyam-logo.jpg'); animation-delay: 0s; }
-.c2 { width: 65px; height: 65px; top: 15%; right: 15%; background-image: url('images/logo2.png'); animation-delay: 0.5s; }
-.c3 { width: 60px; height: 60px; top: 30%; left: 0%; background-image: url('images/logo3.png'); animation-delay: 1s; }
-.c4 { width: 70px; height: 70px; top: 40%; right: 5%; background-image: url('images/logo4.png'); animation-delay: 1.5s; }
-.c5 { width: 65px; height: 65px; bottom: 10%; left: 15%; background-image: url('images/logo5.png'); animation-delay: 2s; }
-.c6 { width: 60px; height: 60px; top: 20%; right: 30%; background-image: url('images/logo6.png'); animation-delay: 2.5s; }
-.c7 { width: 70px; height: 70px; top: 0%; right: 20%; background-image: url('images/logo7.png'); animation-delay: 3s; }
-.c8 { width: 60px; height: 60px; bottom: 25%; left: 5%; background-image: url('images/logo8.png'); animation-delay: 3.5s; }
-.c9 { width: 65px; height: 65px; top: 55%; right: 15%; background-image: url('images/logo9.png'); animation-delay: 4s; }
-
-/* Floating animation */
-@keyframes float {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-30px) rotate(15deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
-/* Spin animation */
-@keyframes spin {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
-}
-
-</style> -->
-
-<style>
-  
-/* ================= COINS CONTAINER ================= */
-.coins {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* ================= COIN BASE ================= */
-.coin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 30%,
-    #fff3b0,
-    #facc15 40%,
-    #eab308 70%,
-    #a16207
-  );
-  box-shadow:
-    inset 0 0 8px rgba(255,255,255,0.6),
-    0 10px 20px rgba(234,179,8,0.35);
-
-  background-size: 60% 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  animation: float 6s ease-in-out infinite;
-}
-
-/* ================= FLOWER CENTER ================= */
-.c5 {
-  width: 80px;
-  height: 80px;
-  transform: translate(-50%, -50%);
-  background-image: url('images/logo5.png');
-}
-
-/* ================= FLOWER PETALS ================= */
-.c1 {
-  width: 65px;
-  height: 65px;
-  transform: translate(-50%, -50%) rotate(0deg) translate(160px);
-  background-image: url('images/devadasyam-logo.jpg');
-}
-
-.c2 {
-  width: 60px;
-  height: 60px;
-  transform: translate(-50%, -50%) rotate(45deg) translate(160px);
-  background-image: url('images/logo2.png');
-}
-
-.c3 {
-  width: 65px;
-  height: 65px;
-  transform: translate(-50%, -50%) rotate(90deg) translate(160px);
-  background-image: url('images/logo3.png');
-}
-
-.c4 {
-  width: 60px;
-  height: 60px;
-  transform: translate(-50%, -50%) rotate(135deg) translate(160px);
-  background-image: url('images/logo4.png');
-}
-
-.c6 {
-  width: 65px;
-  height: 65px;
-  transform: translate(-50%, -50%) rotate(180deg) translate(160px);
-  background-image: url('images/logo6.png');
-}
-
-.c7 {
-  width: 60px;
-  height: 60px;
-  transform: translate(-50%, -50%) rotate(225deg) translate(160px);
-  background-image: url('images/logo7.png');
-}
-
-.c8 {
-  width: 65px;
-  height: 65px;
-  transform: translate(-50%, -50%) rotate(270deg) translate(160px);
-  background-image: url('images/logo8.png');
-}
-
-.c9 {
-  width: 60px;
-  height: 60px;
-  transform: translate(-50%, -50%) rotate(315deg) translate(160px);
-  background-image: url('images/logo9.png');
-}
-
-/* ================= FLOAT ANIMATION ================= */
-@keyframes float {
-  0%   { margin-top: 0; }
-  50%  { margin-top: -20px; }
-  100% { margin-top: 0; }
-}
-
-
-  </style> 
 
 
 <section class="mission-section">
@@ -330,7 +422,9 @@
         dance, theatre, folk arts, literary arts and festivals.
       </p>
 
-      <a href="#" class="view-btn">View More</a>
+<a href="https://entesalabhanjika.com/" target="_blank" class="view-btn">
+  View More
+</a>
     </div>
 
     <!-- Right Column -->
@@ -346,7 +440,7 @@
     <div class="festival-item">
       <div class="festival-image">
         <img src="images/devadasyam-logo.jpg" alt="Festival 1">
-        <a href="#" class="details-btn">Details</a>
+        <a href="https://devadasyam.salabhanjika.com/" class="details-btn">Details</a>
       </div>
       <div class="festival-text">
         <h4>Festivals - Devadaasyam</h4><br>
