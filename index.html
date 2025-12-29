@@ -59,7 +59,7 @@
   font-weight: 600;
 }
 
-/* ================= COIN BASE (OLD STYLE) ================= */
+
 .coin {
   position: absolute;
   top: 50%;
@@ -69,10 +69,10 @@
 
   background: radial-gradient(
     circle at 30% 30%,
-    #fff7c2,
-    #facc15 35%,
-    #eab308 70%,
-    #a16207
+    #fee2e2,
+    #ef4444 35%,
+    #dc2626 70%,
+    #991b1b
   );
 
   background-repeat: no-repeat;
@@ -81,7 +81,7 @@
 
   box-shadow:
     inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(234,179,8,0.45);
+    0 14px 28px rgba(239,68,68,0.45);
 
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -105,14 +105,40 @@
   height: 105px;
 }
 
-.c1 { background-image: url("images/devadasyam-logo.jpg"); }
-.c2 { background-image: url("images/logo2.png"); }
-.c3 { background-image: url("images/logo3.png"); }
-.c4 { background-image: url("images/logo4.png"); }
-.c6 { background-image: url("images/logo6.png"); }
-.c7 { background-image: url("images/logo7.png"); }
-.c8 { background-image: url("images/logo8.png"); }
-.c9 { background-image: url("images/logo9.png"); }
+.c1 { 
+  background-image: url("images/devadasyam-logo.jpg");
+  /* background: radial-gradient(
+    circle at 30% 30%,
+    #dbeafe,
+    #3b82f6 35%,
+    #2563eb 70%,
+    #1e40af
+  ); */
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(59,130,246,0.45);
+}
+.c2 { 
+  background-image: url("images/logo2.png");
+}
+.c3 { 
+  background-image: url("images/logo3.png");
+}
+.c4 { 
+  background-image: url("images/logo4.png");
+}
+.c6 { 
+  background-image: url("images/logo6.png");
+}
+.c7 { 
+  background-image: url("images/logo7.png");
+}
+.c8 { 
+  background-image: url("images/logo8.png");
+}
+.c9 { 
+  background-image: url("images/logo9.png");
+}
 
 /* ================= FLOWER POSITIONS ================= */
 .c1-wrap { transform: translate(-50%, -50%) rotate(0deg)   translate(220px); }
@@ -125,7 +151,7 @@
 .c9-wrap { transform: translate(-50%, -50%) rotate(315deg) translate(220px); }
 
 
-/* text-only coin (keeps gold coin shape) */
+
 .text-coin {
   display: flex;
   align-items: center;
@@ -140,18 +166,14 @@
 
   background: radial-gradient(
     circle at 30% 30%,
-    #fff7c2,
-    #facc15 35%,
-    #eab308 70%,
-    #a16207
+    #fee2e2,
+    #ef4444 35%,
+    #dc2626 70%,
+    #991b1b
   );
-
-
-
-
   box-shadow:
     inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(234,179,8,0.45);
+    0 14px 28px rgba(239,68,68,0.45);
 
   /* text styling */
   font-size: 14px;
@@ -160,6 +182,131 @@
   color: #7c2d12;
   text-align: center;
   padding: 10px;
+}
+/* Center coin (LATEST) - Red */
+.center-wrap .text-coin {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fee2e2,
+    #ef4444 35%,
+    #dc2626 70%,
+    #991b1b
+  );
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(239,68,68,0.45);
+}
+
+/* Coin 1 (DEVADASYAM) - Blue */
+.c1-wrap .coin {
+  /* background: radial-gradient(
+    circle at 30% 30%,
+    #dbeafe,
+    #3b82f6 35%,
+    #2563eb 70%,
+    #1e40af
+  ); */
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(59,130,246,0.45);
+}
+
+/* Coin 2 (Productions) - Purple */
+.c2-wrap .text-coin {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f3e8ff,
+    #a855f7 35%,
+    #9333ea 70%,
+    #6b21a8
+  );
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(168,85,247,0.45);
+}
+
+/* Coin 3 (Workshops) - Green */
+.c3-wrap .text-coin {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #dcfce7,
+    #22c55e 35%,
+    #16a34a 70%,
+    #15803d
+  );
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(34,197,94,0.45);
+}
+
+/* Coin 4 (Performance) - Orange */
+.c4-wrap .text-coin {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffedd5,
+    #f97316 35%,
+    #ea580c 70%,
+    #c2410c
+  );
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(249,115,22,0.45);
+}
+
+/* Coin 6 (Tradition) - Teal */
+.c6-wrap .text-coin {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ccfbf1,
+    #14b8a6 35%,
+    #0d9488 70%,
+    #0f766e
+  );
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(20,184,166,0.45);
+}
+
+/* Coin 7 (Culture) - Pink */
+.c7-wrap .text-coin {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fce7f3,
+    #ec4899 35%,
+    #db2777 70%,
+    #be185d
+  );
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(236,72,153,0.45);
+}
+
+/* Coin 8 (Ente Salabhanjika) - Indigo */
+.c8-wrap .text-coin {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #e0e7ff,
+    #6366f1 35%,
+    #4f46e5 70%,
+    #4338ca
+  );
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(99,102,241,0.45);
+}
+
+/* Coin 9 (Events) - Amber/Gold */
+.c9-wrap .text-coin {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fef3c7,
+    #f59e0b 35%,
+    #d97706 70%,
+    #b45309
+  );
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.7),
+    0 14px 28px rgba(245,158,11,0.45);
 }
 
 </style>
