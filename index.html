@@ -134,7 +134,7 @@
   background-image: url("images/logo7.png");
 }
 .c8 { 
-  background-image: url("images/logo8.png");
+  background-image: url("images/entelogo.png");
 }
 .c9 { 
   background-image: url("images/logo9.png");
@@ -283,13 +283,13 @@
 
 /* Coin 8 (Ente Salabhanjika) - Indigo */
 .c8-wrap .text-coin {
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at 30% 30%,
     #e0e7ff,
     #6366f1 35%,
     #4f46e5 70%,
     #4338ca
-  );
+  ); */
   box-shadow:
     inset 0 0 10px rgba(255,255,255,0.7),
     0 14px 28px rgba(99,102,241,0.45);
@@ -451,20 +451,24 @@
       </a>
 
       <!-- COIN 8 -->
-      <a class="coin-wrap c8-wrap">
-        <svg class="circle-text" viewBox="0 0 200 200">
-          <path id="p8" fill="none"
-            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p8" startOffset="25%" text-anchor="middle">
-            ENTE SALABHANJIKA
-          </textPath></text>
-        </svg>
-<span class="coin text-coin">
-  Ente<br>
-  Salabhanjika
-</span>
+<a href="https://entesalabhanjika.com/" target="_blank"
+   class="coin-wrap c8-wrap">
+  <svg class="circle-text" viewBox="0 0 200 200">
+    <path id="p8" fill="none"
+      d="M100,100 m-80,0
+         a80,80 0 1,1 160,0
+         a80,80 0 1,1 -160,0"/>
+    <text>
+      <textPath href="#p8" startOffset="25%" text-anchor="middle">
+        ENTE SALABHANJIKA
+      </textPath>
+    </text>
+  </svg>
 
-      </a>
+  <!-- LOGO INSIDE COIN -->
+  <span class="coin c8"></span>
+</a>
+
 
       <!-- COIN 9 -->
       <a class="coin-wrap c9-wrap">
