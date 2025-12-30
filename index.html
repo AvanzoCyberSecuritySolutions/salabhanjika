@@ -23,6 +23,7 @@
 .center-text {
   width: 180px;
   height: 180px;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
   /* ================= COINS CONTAINER ================= */
@@ -51,6 +52,16 @@
   pointer-events: none;
   z-index: 2;
 }
+
+/* Counter-rotate circular text to keep it upright */
+.c1-wrap .circle-text { transform: translate(-50%, -50%) rotate(0deg); }
+.c2-wrap .circle-text { transform: translate(-50%, -50%) rotate(-45deg); }
+.c3-wrap .circle-text { transform: translate(-50%, -50%) rotate(-90deg); }
+.c4-wrap .circle-text { transform: translate(-50%, -50%) rotate(-135deg); }
+.c6-wrap .circle-text { transform: translate(-50%, -50%) rotate(-180deg); }
+.c7-wrap .circle-text { transform: translate(-50%, -50%) rotate(-225deg); }
+.c8-wrap .circle-text { transform: translate(-50%, -50%) rotate(-270deg); }
+.c9-wrap .circle-text { transform: translate(-50%, -50%) rotate(-315deg); }
 
 .circle-text text {
   font-size: 14px;
@@ -149,6 +160,26 @@
 .c7-wrap { transform: translate(-50%, -50%) rotate(225deg) translate(220px); }
 .c8-wrap { transform: translate(-50%, -50%) rotate(270deg) translate(220px); }
 .c9-wrap { transform: translate(-50%, -50%) rotate(315deg) translate(220px); }
+
+/* Counter-rotate coins to keep logos upright */
+.c1-wrap .coin { transform: translate(-50%, -50%) rotate(0deg); }
+.c2-wrap .coin { transform: translate(-50%, -50%) rotate(-45deg); }
+.c3-wrap .coin { transform: translate(-50%, -50%) rotate(-90deg); }
+.c4-wrap .coin { transform: translate(-50%, -50%) rotate(-135deg); }
+.c6-wrap .coin { transform: translate(-50%, -50%) rotate(-180deg); }
+.c7-wrap .coin { transform: translate(-50%, -50%) rotate(-225deg); }
+.c8-wrap .coin { transform: translate(-50%, -50%) rotate(-270deg); }
+.c9-wrap .coin { transform: translate(-50%, -50%) rotate(-315deg); }
+
+/* Counter-rotate text coins to keep text upright */
+.c1-wrap .text-coin { transform: translate(-50%, -50%) rotate(0deg); }
+.c2-wrap .text-coin { transform: translate(-50%, -50%) rotate(-45deg); }
+.c3-wrap .text-coin { transform: translate(-50%, -50%) rotate(-90deg); }
+.c4-wrap .text-coin { transform: translate(-50%, -50%) rotate(-135deg); }
+.c6-wrap .text-coin { transform: translate(-50%, -50%) rotate(-180deg); }
+.c7-wrap .text-coin { transform: translate(-50%, -50%) rotate(-225deg); }
+.c8-wrap .text-coin { transform: translate(-50%, -50%) rotate(-270deg); }
+.c9-wrap .text-coin { transform: translate(-50%, -50%) rotate(-315deg); }
 
 
 
@@ -367,7 +398,7 @@
          a85,85 0 1,1 170,0
          a85,85 0 1,1 -170,0"/>
     <text>
-      <textPath href="#centerPath" startOffset="50%" text-anchor="middle">
+      <textPath href="#centerPath" startOffset="25%" text-anchor="middle">
         LATEST
       </textPath>
     </text>
@@ -383,7 +414,7 @@
         <svg class="circle-text" viewBox="0 0 200 200">
           <path id="p1" fill="none"
             d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p1" startOffset="50%" text-anchor="middle">
+          <text><textPath href="#p1" startOffset="25%" text-anchor="middle">
             DEVADASYAM
           </textPath></text>
         </svg>
@@ -395,7 +426,7 @@
         <svg class="circle-text" viewBox="0 0 200 200">
           <path id="p2" fill="none"
             d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p2" startOffset="50%" text-anchor="middle">
+          <text><textPath href="#p2" startOffset="25%" text-anchor="middle">
             PRODUCTIONS
           </textPath></text>
         </svg>
@@ -407,7 +438,7 @@
         <svg class="circle-text" viewBox="0 0 200 200">
           <path id="p3" fill="none"
             d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p3" startOffset="50%" text-anchor="middle">
+          <text><textPath href="#p3" startOffset="25%" text-anchor="middle">
             WORK SHOPS
           </textPath></text>
         </svg>
@@ -419,7 +450,7 @@
         <svg class="circle-text" viewBox="0 0 200 200">
           <path id="p4" fill="none"
             d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p4" startOffset="50%" text-anchor="middle">
+          <text><textPath href="#p4" startOffset="25%" text-anchor="middle">
             PERFORMANCE
           </textPath></text>
         </svg>
@@ -431,7 +462,7 @@
         <svg class="circle-text" viewBox="0 0 200 200">
           <path id="p6" fill="none"
             d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p6" startOffset="50%" text-anchor="middle">
+          <text><textPath href="#p6" startOffset="25%" text-anchor="middle">
             TRADITION
           </textPath></text>
         </svg>
@@ -443,7 +474,7 @@
         <svg class="circle-text" viewBox="0 0 200 200">
           <path id="p7" fill="none"
             d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p7" startOffset="50%" text-anchor="middle">
+          <text><textPath href="#p7" startOffset="25%" text-anchor="middle">
             CULTURE
           </textPath></text>
         </svg>
@@ -475,7 +506,7 @@
         <svg class="circle-text" viewBox="0 0 200 200">
           <path id="p9" fill="none"
             d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p9" startOffset="50%" text-anchor="middle">
+          <text><textPath href="#p9" startOffset="25%" text-anchor="middle">
             EVENTS
           </textPath></text>
         </svg>
