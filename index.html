@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,343 +10,430 @@
   <link rel="stylesheet" href="css/production.css">
 
 
-<style>
+  <style>
+    /* CENTER WRAPPER */
+    .center-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-  /* CENTER WRAPPER */
-.center-wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    /* slightly bigger text circle */
+    .center-text {
+      width: 180px;
+      height: 180px;
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
 
-/* slightly bigger text circle */
-.center-text {
-  width: 180px;
-  height: 180px;
-  transform: translate(-50%, -50%) rotate(0deg);
-}
+    /* ================= COINS CONTAINER ================= */
+    .coins {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: auto;
+    }
 
-  /* ================= COINS CONTAINER ================= */
-.coins {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  margin: auto;
-}
+    /* ================= COIN WRAPPER (POSITION) ================= */
+    .coin-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
 
-/* ================= COIN WRAPPER (POSITION) ================= */
-.coin-wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
+    /* ================= CIRCULAR TEXT ================= */
+    .circle-text {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 2;
+    }
 
-/* ================= CIRCULAR TEXT ================= */
-.circle-text {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 2;
-}
+    /* Counter-rotate circular text to keep it upright */
+    .c1-wrap .circle-text {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
 
-/* Counter-rotate circular text to keep it upright */
-.c1-wrap .circle-text { transform: translate(-50%, -50%) rotate(0deg); }
-.c2-wrap .circle-text { transform: translate(-50%, -50%) rotate(-45deg); }
-.c3-wrap .circle-text { transform: translate(-50%, -50%) rotate(-90deg); }
-.c4-wrap .circle-text { transform: translate(-50%, -50%) rotate(-135deg); }
-.c6-wrap .circle-text { transform: translate(-50%, -50%) rotate(-180deg); }
-.c7-wrap .circle-text { transform: translate(-50%, -50%) rotate(-225deg); }
-.c8-wrap .circle-text { transform: translate(-50%, -50%) rotate(-270deg); }
-.c9-wrap .circle-text { transform: translate(-50%, -50%) rotate(-315deg); }
+    .c2-wrap .circle-text {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
 
-.circle-text text {
-  font-size: 14px;
-  letter-spacing: 3px;
-  fill: #7c2d12;
-  font-weight: 600;
-}
+    .c3-wrap .circle-text {
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
 
+    .c4-wrap .circle-text {
+      transform: translate(-50%, -50%) rotate(-135deg);
+    }
 
-.coin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+    .c6-wrap .circle-text {
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
 
-  border-radius: 50%;
+    .c7-wrap .circle-text {
+      transform: translate(-50%, -50%) rotate(-225deg);
+    }
 
-  background: radial-gradient(
-    circle at 30% 30%,
-    #fee2e2,
-    #ef4444 35%,
-    #dc2626 70%,
-    #991b1b
-  );
+    .c8-wrap .circle-text {
+      transform: translate(-50%, -50%) rotate(-270deg);
+    }
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 85% 85%;
+    .c9-wrap .circle-text {
+      transform: translate(-50%, -50%) rotate(-315deg);
+    }
 
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(239,68,68,0.45);
-
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-/* ================= CENTER COIN ================= */
-.c5 {
-  width: 130px;
-  height: 130px;
-  background-image: url("images/logo5.png");
-}
-
-/* ================= OUTER COINS SIZE + LOGO ================= */
-.c1, .c3, .c6, .c8 {
-  width: 110px;
-  height: 110px;
-}
-
-.c2, .c4, .c7, .c9 {
-  width: 105px;
-  height: 105px;
-}
-
-.c1 { 
-  background-image: url("images/devadasyam-logo.jpg");
-  /* background: radial-gradient(
-    circle at 30% 30%,
-    #dbeafe,
-    #3b82f6 35%,
-    #2563eb 70%,
-    #1e40af
-  ); */
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(59,130,246,0.45);
-}
-.c2 { 
-  background-image: url("images/logo2.png");
-}
-.c3 { 
-  background-image: url("images/logo3.png");
-}
-.c4 { 
-  background-image: url("images/logo4.png");
-}
-.c6 { 
-  background-image: url("images/logo6.png");
-}
-.c7 { 
-  background-image: url("images/logo7.png");
-}
-.c8 { 
-  background-image: url("images/entelogo.png");
-}
-.c9 { 
-  background-image: url("images/logo9.png");
-}
-
-/* ================= FLOWER POSITIONS ================= */
-.c1-wrap { transform: translate(-50%, -50%) rotate(0deg)   translate(220px); }
-.c2-wrap { transform: translate(-50%, -50%) rotate(45deg)  translate(220px); }
-.c3-wrap { transform: translate(-50%, -50%) rotate(90deg)  translate(220px); }
-.c4-wrap { transform: translate(-50%, -50%) rotate(135deg) translate(220px); }
-.c6-wrap { transform: translate(-50%, -50%) rotate(180deg) translate(220px); }
-.c7-wrap { transform: translate(-50%, -50%) rotate(225deg) translate(220px); }
-.c8-wrap { transform: translate(-50%, -50%) rotate(270deg) translate(220px); }
-.c9-wrap { transform: translate(-50%, -50%) rotate(315deg) translate(220px); }
-
-/* Counter-rotate coins to keep logos upright */
-.c1-wrap .coin { transform: translate(-50%, -50%) rotate(0deg); }
-.c2-wrap .coin { transform: translate(-50%, -50%) rotate(-45deg); }
-.c3-wrap .coin { transform: translate(-50%, -50%) rotate(-90deg); }
-.c4-wrap .coin { transform: translate(-50%, -50%) rotate(-135deg); }
-.c6-wrap .coin { transform: translate(-50%, -50%) rotate(-180deg); }
-.c7-wrap .coin { transform: translate(-50%, -50%) rotate(-225deg); }
-.c8-wrap .coin { transform: translate(-50%, -50%) rotate(-270deg); }
-.c9-wrap .coin { transform: translate(-50%, -50%) rotate(-315deg); }
-
-/* Counter-rotate text coins to keep text upright */
-.c1-wrap .text-coin { transform: translate(-50%, -50%) rotate(0deg); }
-.c2-wrap .text-coin { transform: translate(-50%, -50%) rotate(-45deg); }
-.c3-wrap .text-coin { transform: translate(-50%, -50%) rotate(-90deg); }
-.c4-wrap .text-coin { transform: translate(-50%, -50%) rotate(-135deg); }
-.c6-wrap .text-coin { transform: translate(-50%, -50%) rotate(-180deg); }
-.c7-wrap .text-coin { transform: translate(-50%, -50%) rotate(-225deg); }
-.c8-wrap .text-coin { transform: translate(-50%, -50%) rotate(-270deg); }
-.c9-wrap .text-coin { transform: translate(-50%, -50%) rotate(-315deg); }
+    .circle-text text {
+      font-size: 14px;
+      letter-spacing: 3px;
+      fill: #7c2d12;
+      font-weight: 600;
+    }
 
 
+    .coin {
+      position: absolute;
+      top: 50%;
+      left: 50%;
 
-.text-coin {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      border-radius: 50%;
 
-  
-  width: 105px;
-  height: 105px;
+      background: radial-gradient(circle at 30% 30%,
+          #fee2e2,
+          #ef4444 35%,
+          #dc2626 70%,
+          #991b1b);
 
-  /* keep coin shape */
-  border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 85% 85%;
 
-  background: radial-gradient(
-    circle at 30% 30%,
-    #fee2e2,
-    #ef4444 35%,
-    #dc2626 70%,
-    #991b1b
-  );
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(239,68,68,0.45);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(239, 68, 68, 0.45);
 
-  /* text styling */
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #7c2d12;
-  text-align: center;
-  padding: 10px;
-}
-/* Center coin (LATEST) - Red */
-.center-wrap .text-coin {
-  background: radial-gradient(
-    circle at 30% 30%,
-    #fee2e2,
-    #ef4444 35%,
-    #dc2626 70%,
-    #991b1b
-  );
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(239,68,68,0.45);
-}
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
 
-/* Coin 1 (DEVADASYAM) - Blue */
-.c1-wrap .coin {
-  /* background: radial-gradient(
+    /* ================= CENTER COIN ================= */
+    .c5 {
+      width: 130px;
+      height: 130px;
+      background-image: url("images/logo5.png");
+    }
+
+    /* ================= OUTER COINS SIZE + LOGO ================= */
+    .c1,
+    .c3,
+    .c6,
+    .c8 {
+      width: 110px;
+      height: 110px;
+    }
+
+    .c2,
+    .c4,
+    .c7,
+    .c9 {
+      width: 105px;
+      height: 105px;
+    }
+
+    .c1 {
+      background-image: url("images/devadasyam-logo.jpg");
+      /* background: radial-gradient(
     circle at 30% 30%,
     #dbeafe,
     #3b82f6 35%,
     #2563eb 70%,
     #1e40af
   ); */
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(59,130,246,0.45);
-}
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(59, 130, 246, 0.45);
+    }
 
-/* Coin 2 (Productions) - Purple */
-.c2-wrap .text-coin {
-  background: radial-gradient(
+    .c2 {
+      background-image: url("images/logo2.png");
+    }
+
+    .c3 {
+      background-image: url("images/logo3.png");
+    }
+
+    .c4 {
+      background-image: url("images/logo4.png");
+    }
+
+    .c6 {
+      background-image: url("images/logo6.png");
+    }
+
+    .c7 {
+      background-image: url("images/logo7.png");
+    }
+
+    .c8 {
+      background-image: url("images/entelogo.png");
+    }
+
+    .c9 {
+      background-image: url("images/logo9.png");
+    }
+
+    /* ================= FLOWER POSITIONS ================= */
+    .c1-wrap {
+      transform: translate(-50%, -50%) rotate(0deg) translate(220px);
+    }
+
+    .c2-wrap {
+      transform: translate(-50%, -50%) rotate(45deg) translate(220px);
+    }
+
+    .c3-wrap {
+      transform: translate(-50%, -50%) rotate(90deg) translate(220px);
+    }
+
+    .c4-wrap {
+      transform: translate(-50%, -50%) rotate(135deg) translate(220px);
+    }
+
+    .c6-wrap {
+      transform: translate(-50%, -50%) rotate(180deg) translate(220px);
+    }
+
+    .c7-wrap {
+      transform: translate(-50%, -50%) rotate(225deg) translate(220px);
+    }
+
+    .c8-wrap {
+      transform: translate(-50%, -50%) rotate(270deg) translate(220px);
+    }
+
+    .c9-wrap {
+      transform: translate(-50%, -50%) rotate(315deg) translate(220px);
+    }
+
+    /* Counter-rotate coins to keep logos upright */
+    .c1-wrap .coin {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .c2-wrap .coin {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .c3-wrap .coin {
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
+    .c4-wrap .coin {
+      transform: translate(-50%, -50%) rotate(-135deg);
+    }
+
+    .c6-wrap .coin {
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
+
+    .c7-wrap .coin {
+      transform: translate(-50%, -50%) rotate(-225deg);
+    }
+
+    .c8-wrap .coin {
+      transform: translate(-50%, -50%) rotate(-270deg);
+    }
+
+    .c9-wrap .coin {
+      transform: translate(-50%, -50%) rotate(-315deg);
+    }
+
+    /* Counter-rotate text coins to keep text upright */
+    .c1-wrap .text-coin {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .c2-wrap .text-coin {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .c3-wrap .text-coin {
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
+    .c4-wrap .text-coin {
+      transform: translate(-50%, -50%) rotate(-135deg);
+    }
+
+    .c6-wrap .text-coin {
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
+
+    .c7-wrap .text-coin {
+      transform: translate(-50%, -50%) rotate(-225deg);
+    }
+
+    .c8-wrap .text-coin {
+      transform: translate(-50%, -50%) rotate(-270deg);
+    }
+
+    .c9-wrap .text-coin {
+      transform: translate(-50%, -50%) rotate(-315deg);
+    }
+
+
+
+    .text-coin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      width: 105px;
+      height: 105px;
+
+      /* keep coin shape */
+      border-radius: 50%;
+
+      background: radial-gradient(circle at 30% 30%,
+          #fee2e2,
+          #ef4444 35%,
+          #dc2626 70%,
+          #991b1b);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(239, 68, 68, 0.45);
+
+      /* text styling */
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #7c2d12;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Center coin (LATEST) - Red */
+    .center-wrap .text-coin {
+      background: radial-gradient(circle at 30% 30%,
+          #fee2e2,
+          #ef4444 35%,
+          #dc2626 70%,
+          #991b1b);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(239, 68, 68, 0.45);
+    }
+
+    /* Coin 1 (DEVADASYAM) - Blue */
+    .c1-wrap .coin {
+      /* background: radial-gradient(
     circle at 30% 30%,
-    #f3e8ff,
-    #a855f7 35%,
-    #9333ea 70%,
-    #6b21a8
-  );
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(168,85,247,0.45);
-}
+    #dbeafe,
+    #3b82f6 35%,
+    #2563eb 70%,
+    #1e40af
+  ); */
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(59, 130, 246, 0.45);
+    }
 
-/* Coin 3 (Workshops) - Green */
-.c3-wrap .text-coin {
-  background: radial-gradient(
-    circle at 30% 30%,
-    #dcfce7,
-    #22c55e 35%,
-    #16a34a 70%,
-    #15803d
-  );
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(34,197,94,0.45);
-}
+    /* Coin 2 (Productions) - Purple */
+    .c2-wrap .text-coin {
+      background: radial-gradient(circle at 30% 30%,
+          #f3e8ff,
+          #a855f7 35%,
+          #9333ea 70%,
+          #6b21a8);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(168, 85, 247, 0.45);
+    }
 
-/* Coin 4 (Performance) - Orange */
-.c4-wrap .text-coin {
-  background: radial-gradient(
-    circle at 30% 30%,
-    #ffedd5,
-    #f97316 35%,
-    #ea580c 70%,
-    #c2410c
-  );
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(249,115,22,0.45);
-}
+    /* Coin 3 (Workshops) - Green */
+    .c3-wrap .text-coin {
+      background: radial-gradient(circle at 30% 30%,
+          #dcfce7,
+          #22c55e 35%,
+          #16a34a 70%,
+          #15803d);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(34, 197, 94, 0.45);
+    }
 
-/* Coin 6 (Tradition) - Teal */
-.c6-wrap .text-coin {
-  background: radial-gradient(
-    circle at 30% 30%,
-    #ccfbf1,
-    #14b8a6 35%,
-    #0d9488 70%,
-    #0f766e
-  );
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(20,184,166,0.45);
-}
+    /* Coin 4 (Performance) - Orange */
+    .c4-wrap .text-coin {
+      background: radial-gradient(circle at 30% 30%,
+          #ffedd5,
+          #f97316 35%,
+          #ea580c 70%,
+          #c2410c);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(249, 115, 22, 0.45);
+    }
 
-/* Coin 7 (Culture) - Pink */
-.c7-wrap .text-coin {
-  background: radial-gradient(
-    circle at 30% 30%,
-    #fce7f3,
-    #ec4899 35%,
-    #db2777 70%,
-    #be185d
-  );
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(236,72,153,0.45);
-}
+    /* Coin 6 (Tradition) - Teal */
+    .c6-wrap .text-coin {
+      background: radial-gradient(circle at 30% 30%,
+          #ccfbf1,
+          #14b8a6 35%,
+          #0d9488 70%,
+          #0f766e);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(20, 184, 166, 0.45);
+    }
 
-/* Coin 8 (Ente Salabhanjika) - Indigo */
-.c8-wrap .text-coin {
-  /* background: radial-gradient(
+    /* Coin 7 (Culture) - Pink */
+    .c7-wrap .text-coin {
+      background: radial-gradient(circle at 30% 30%,
+          #fce7f3,
+          #ec4899 35%,
+          #db2777 70%,
+          #be185d);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(236, 72, 153, 0.45);
+    }
+
+    /* Coin 8 (Ente Salabhanjika) - Indigo */
+    .c8-wrap .text-coin {
+      /* background: radial-gradient(
     circle at 30% 30%,
     #e0e7ff,
     #6366f1 35%,
     #4f46e5 70%,
     #4338ca
   ); */
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(99,102,241,0.45);
-}
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(99, 102, 241, 0.45);
+    }
 
-/* Coin 9 (Events) - Amber/Gold */
-.c9-wrap .text-coin {
-  background: radial-gradient(
-    circle at 30% 30%,
-    #fef3c7,
-    #f59e0b 35%,
-    #d97706 70%,
-    #b45309
-  );
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.7),
-    0 14px 28px rgba(245,158,11,0.45);
-}
-
-</style>
+    /* Coin 9 (Events) - Amber/Gold */
+    .c9-wrap .text-coin {
+      background: radial-gradient(circle at 30% 30%,
+          #fef3c7,
+          #f59e0b 35%,
+          #d97706 70%,
+          #b45309);
+      box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.7),
+        0 14px 28px rgba(245, 158, 11, 0.45);
+    }
+  </style>
 
 
 
 
 </head>
+
 <body>
   <header id="header">
     <div class="logo">
@@ -356,7 +444,7 @@
 
     <nav>
       <ul id="nav-links">
-        <li><a href="index.html">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li>
           <a href="#">Events ▼</a>
           <ul>
@@ -366,7 +454,7 @@
             <li><a href="competition.html">competition</a></li>
           </ul>
         </li>
-        <li><a href="#">Announcements</a></li>
+        <li><a href="announcement.html">Announcements</a></li>
         <li>
           <a href="#">Streams ▼</a>
           <ul>
@@ -375,369 +463,375 @@
             <li><a href="#">Drama</a></li>
           </ul>
         </li>
-        <li><a href="#">Enroll Now</a></li>
+        <li><a href="enroll.html">Enroll Now</a></li>
         <li><a href="contactus.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
 
-<section class="hero">
-  <div class="hero-left">
-    <h1>Salabhanjika Studio for Arts and Performance</h1>
-  </div>
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Salabhanjika Studio for Arts and Performance</h1>
+    </div>
 
-  <div class="hero-right">
-    <div class="coins">
+    <div class="hero-right">
+      <div class="coins">
 
-      <!-- CENTER COIN -->
-      <div class="center-wrap">
-  <svg class="circle-text center-text" viewBox="0 0 200 200">
-    <path id="centerPath" fill="none"
-      d="M100,100 m-85,0
+        <!-- CENTER COIN -->
+        <div class="center-wrap">
+          <svg class="circle-text center-text" viewBox="0 0 200 200">
+            <path id="centerPath" fill="none" d="M100,100 m-85,0
          a85,85 0 1,1 170,0
-         a85,85 0 1,1 -170,0"/>
-    <text>
-      <textPath href="#centerPath" startOffset="25%" text-anchor="middle">
-        LATEST
-      </textPath>
-    </text>
-  </svg>
+         a85,85 0 1,1 -170,0" />
+            <text>
+              <textPath href="#centerPath" startOffset="25%" text-anchor="middle">
+                LATEST
+              </textPath>
+            </text>
+          </svg>
 
-  <span class="coin text-coin">LATEST</span>
-</div>
+          <span class="coin text-coin">LATEST</span>
+        </div>
 
 
-      <!-- COIN 1 -->
-      <a href="https://devadasyam.salabhanjika.com/" target="_blank"
-         class="coin-wrap c1-wrap">
-        <svg class="circle-text" viewBox="0 0 200 200">
-          <path id="p1" fill="none"
-            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p1" startOffset="25%" text-anchor="middle">
-            DEVADASYAM
-          </textPath></text>
-        </svg>
-        <span class="coin c1"></span>
-      </a>
+        <!-- COIN 1 -->
+        <a href="https://devadasyam.salabhanjika.com/" target="_blank" class="coin-wrap c1-wrap">
+          <svg class="circle-text" viewBox="0 0 200 200">
+            <path id="p1" fill="none" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
+            <text>
+              <textPath href="#p1" startOffset="25%" text-anchor="middle">
+                DEVADASYAM
+              </textPath>
+            </text>
+          </svg>
+          <span class="coin c1"></span>
+        </a>
 
-      <!-- COIN 2 -->
-      <a class="coin-wrap c2-wrap">
-        <svg class="circle-text" viewBox="0 0 200 200">
-          <path id="p2" fill="none"
-            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p2" startOffset="25%" text-anchor="middle">
-            PRODUCTIONS
-          </textPath></text>
-        </svg>
-        <span class="coin text-coin">Productions</span>
-      </a>
+        <!-- COIN 2 -->
+        <a class="coin-wrap c2-wrap">
+          <svg class="circle-text" viewBox="0 0 200 200">
+            <path id="p2" fill="none" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
+            <text>
+              <textPath href="#p2" startOffset="25%" text-anchor="middle">
+                PRODUCTIONS
+              </textPath>
+            </text>
+          </svg>
+          <span class="coin text-coin">Productions</span>
+        </a>
 
-      <!-- COIN 3 -->
-      <a class="coin-wrap c3-wrap">
-        <svg class="circle-text" viewBox="0 0 200 200">
-          <path id="p3" fill="none"
-            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p3" startOffset="25%" text-anchor="middle">
-            WORK SHOPS
-          </textPath></text>
-        </svg>
-        <span class="coin text-coin">Workshops</span>
-      </a>
+        <!-- COIN 3 -->
+        <a class="coin-wrap c3-wrap">
+          <svg class="circle-text" viewBox="0 0 200 200">
+            <path id="p3" fill="none" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
+            <text>
+              <textPath href="#p3" startOffset="25%" text-anchor="middle">
+                WORK SHOPS
+              </textPath>
+            </text>
+          </svg>
+          <span class="coin text-coin">Workshops</span>
+        </a>
 
-      <!-- COIN 4 -->
-      <a class="coin-wrap c4-wrap">
-        <svg class="circle-text" viewBox="0 0 200 200">
-          <path id="p4" fill="none"
-            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p4" startOffset="25%" text-anchor="middle">
-            PERFORMANCE
-          </textPath></text>
-        </svg>
-        <span class="coin text-coin">Performance</a></span>
-      </a>
+        <!-- COIN 4 -->
+        <a class="coin-wrap c4-wrap">
+          <svg class="circle-text" viewBox="0 0 200 200">
+            <path id="p4" fill="none" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
+            <text>
+              <textPath href="#p4" startOffset="25%" text-anchor="middle">
+                PERFORMANCE
+              </textPath>
+            </text>
+          </svg>
+          <span class="coin text-coin">Performance</a></span>
+        </a>
 
-      <!-- COIN 6 -->
-      <a class="coin-wrap c6-wrap">
-        <svg class="circle-text" viewBox="0 0 200 200">
-          <path id="p6" fill="none"
-            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p6" startOffset="25%" text-anchor="middle">
-            TRADITION
-          </textPath></text>
-        </svg>
-        <span class="coin text-coin">Tradition</span>
-      </a>
+        <!-- COIN 6 -->
+        <a class="coin-wrap c6-wrap">
+          <svg class="circle-text" viewBox="0 0 200 200">
+            <path id="p6" fill="none" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
+            <text>
+              <textPath href="#p6" startOffset="25%" text-anchor="middle">
+                TRADITION
+              </textPath>
+            </text>
+          </svg>
+          <span class="coin text-coin">Tradition</span>
+        </a>
 
-      <!-- COIN 7 -->
-      <a class="coin-wrap c7-wrap">
-        <svg class="circle-text" viewBox="0 0 200 200">
-          <path id="p7" fill="none"
-            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p7" startOffset="25%" text-anchor="middle">
-            CULTURE
-          </textPath></text>
-        </svg>
-        <span class="coin text-coin">Culture</span>
-      </a>
+        <!-- COIN 7 -->
+        <a class="coin-wrap c7-wrap">
+          <svg class="circle-text" viewBox="0 0 200 200">
+            <path id="p7" fill="none" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
+            <text>
+              <textPath href="#p7" startOffset="25%" text-anchor="middle">
+                CULTURE
+              </textPath>
+            </text>
+          </svg>
+          <span class="coin text-coin">Culture</span>
+        </a>
 
-      <!-- COIN 8 -->
-<a href="https://entesalabhanjika.com/" target="_blank"
-   class="coin-wrap c8-wrap">
-  <svg class="circle-text" viewBox="0 0 200 200">
-    <path id="p8" fill="none"
-      d="M100,100 m-80,0
+        <!-- COIN 8 -->
+        <a href="https://entesalabhanjika.com/" target="_blank" class="coin-wrap c8-wrap">
+          <svg class="circle-text" viewBox="0 0 200 200">
+            <path id="p8" fill="none" d="M100,100 m-80,0
          a80,80 0 1,1 160,0
-         a80,80 0 1,1 -160,0"/>
-    <text>
-      <textPath href="#p8" startOffset="25%" text-anchor="middle">
-        ENTE SALABHANJIKA
-      </textPath>
-    </text>
-  </svg>
+         a80,80 0 1,1 -160,0" />
+            <text>
+              <textPath href="#p8" startOffset="25%" text-anchor="middle">
+                ENTE SALABHANJIKA
+              </textPath>
+            </text>
+          </svg>
 
-  <!-- LOGO INSIDE COIN -->
-  <span class="coin c8"></span>
-</a>
-
-
-      <!-- COIN 9 -->
-      <a class="coin-wrap c9-wrap">
-        <svg class="circle-text" viewBox="0 0 200 200">
-          <path id="p9" fill="none"
-            d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
-          <text><textPath href="#p9" startOffset="25%" text-anchor="middle">
-            EVENTS
-          </textPath></text>
-        </svg>
-        <span class="coin text-coin">Events</span>
-      </a>
-
-    </div>
-  </div>
-</section>
+          <!-- LOGO INSIDE COIN -->
+          <span class="coin c8"></span>
+        </a>
 
 
-<section class="mission-section">
-  <!-- Left column -->
-  <div class="mission-left">
-    <div class="image-wrapper">
-      <div class="bg-image"></div>
-      <img src="images/sight-seeing-45.png" alt="Overlay Frame" class="overlay-img">
-    </div>
-  </div>
+        <!-- COIN 9 -->
+        <a class="coin-wrap c9-wrap">
+          <svg class="circle-text" viewBox="0 0 200 200">
+            <path id="p9" fill="none" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
+            <text>
+              <textPath href="#p9" startOffset="25%" text-anchor="middle">
+                EVENTS
+              </textPath>
+            </text>
+          </svg>
+          <span class="coin text-coin">Events</span>
+        </a>
 
-  <!-- Right column -->
-  <div class="mission-right">
-    <div class="mission-box">
-      <h1>Learn Art to Learn to Learn</h1>
-      <h3>Mission</h3>
-      <p>
-        The mission of team Salabhanjika is to make people realize that we are eventually missing 
-        the god bestowed, rich arts we have in our country. The most important aspect in this will 
-        be to conduct detailed research to revive classical dances, other art forms and folk lores 
-        of the past which are almost fading away.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="about-section">
-  <div class="about-container">
-    <!-- Left Image Slider -->
-    <div class="image-slider">
-      <div class="slides">
-        <img src="images/ssap7 (1).jpg" alt="Image 1">
-        <img src="images/ssap6.jpg" alt="Image 2">
-        <img src="images/ssap5.jpg" alt="Image 3">
-        <img src="images/ssap4.jpg" alt="Image 4">
-        <img src="images/ssap3.jpg" alt="Image 5">
-        <img src="images/ssap2.jpg" alt="Image 6">
-        <img src="images/ssap1.jpg" alt="Image 7">
       </div>
-      <!-- Navigation -->
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
     </div>
+  </section>
 
-    <!-- Right About Box -->
-    <div class="about-box">
-      <h2>About Us</h2>
-      <h4>_________</h4><br>
-      <p>
-        Saalabhanjika Studio for Arts and Performance is a non-profitable organisation 
-        specialized in imparting training in south Indian classical Art forms to budding artists.
-      </p>
-      <p>
-        Our vision is to develop it into a world class organization, extending training in both theory 
-        and practice of each branch of fine arts. The primary objective is to enhance the quality of 
-        communication in the media related to histrionics and reintegrate learning and research to the 
-        presentation, performance and application of dance.
-      </p>
-    </div>
-  </div>
-</section>
 
-<!-- Streams Section -->
-<section class="streams-section">
-  <div class="overlay">
-    <h1 class="streams-heading">Streams</h1>
-    <ul class="streams-list">
-      <li><a href="#">Bharathanatiyam</a></li>
-      <li><a href="#">Kuchipudi</a></li>
-      <li><a href="#">Mohiniyattam</a></li>
-      <li><a href="#">Music</a></li>
-      <li><a href="#">Violin</a></li>
-      <li><a href="#">Mrudangam</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- Section -->
-<section class="art-section">
-  <div class="art-container">
-    <!-- Left Column -->
-    <div class="art-left">
-      <img src="images/Screenshot-2021-08-25-162507.jpg" alt="Left Image" class="left-img" />
-
-      <p class="art-text">
-        Ente Salabhanjika is a collection of the inspiring and creative journeys 
-        of artists and art forms across different parts of India. Our focus is on 
-        shining a light on the vibrant art and culture of India. With a deep rooted 
-        cultural heritage, India has one of the world’s largest collections of music, 
-        dance, theatre, folk arts, literary arts and festivals.
-      </p>
-
-<a href="https://entesalabhanjika.com/" target="_blank" class="view-btn">
-  View More
-</a>
-    </div>
-
-    <!-- Right Column -->
-    <div class="art-right">
-      <img src="images/book-font.jpg" alt="Right Image" class="right-img" />
-    </div>
-  </div>
-</section>
-
-<section class="festival-section">
-  <div class="festival-grid">
-    <!-- Item 1 -->
-    <div class="festival-item">
-      <div class="festival-image">
-        <img src="images/devadasyam-logo.jpg" alt="Festival 1">
-        <a href="https://devadasyam.salabhanjika.com/" class="details-btn">Details</a>
-      </div>
-      <div class="festival-text">
-        <h4>Festivals - Devadaasyam</h4><br>
-        <p>Festival is intended to expose introduce the different art forms and cultural rituals to the coming generations.</p>
+  <section class="mission-section">
+    <!-- Left column -->
+    <div class="mission-left">
+      <div class="image-wrapper">
+        <div class="bg-image"></div>
+        <img src="images/sight-seeing-45.png" alt="Overlay Frame" class="overlay-img">
       </div>
     </div>
 
-    <!-- Item 2 -->
-    <div class="festival-item">
-      <div class="festival-image">
-        <img src="images/bhama-kalapam-1.jpg" alt="Festival 2">
-        <a href="#" class="details-btn">Details</a>
-      </div>
-      <div class="festival-text">
-        <h4>Productions</h4><br>
-        <p>Stage performance is one of the most important part of these arts.
-           We provide our children a great opportunity to perform on different stage even from their beginning stage.</p>
-      </div>
-    </div>
-
-    <!-- Item 3 -->
-    <div class="festival-item">
-      <div class="festival-image">
-        <img src="images/workshop-final.jpg" alt="Festival 3">
-        <a href="#" class="details-btn">Details</a>
-      </div>
-      <div class="festival-text">
-        <h4>Workshops</h4><br>
-        <p>We introduce children to our traditional art 
-          forms specially the art of scripting a text and enacting it in any art or dance form</p>
+    <!-- Right column -->
+    <div class="mission-right">
+      <div class="mission-box">
+        <h1>Learn Art to Learn to Learn</h1>
+        <h3>Mission</h3>
+        <p>
+          The mission of team Salabhanjika is to make people realize that we are eventually missing
+          the god bestowed, rich arts we have in our country. The most important aspect in this will
+          be to conduct detailed research to revive classical dances, other art forms and folk lores
+          of the past which are almost fading away.
+        </p>
       </div>
     </div>
+  </section>
 
-    <!-- Item 4 -->
-    <div class="festival-item">
-      <div class="festival-image">
-        <img src="images/scdc-final.jpg" alt="Festival 4">
-        <a href="#" class="details-btn">Details</a>
-      </div>
-      <div class="festival-text">
-        <h4>Competitions</h4><br>
-        <p>It is very important for children to develop a friendly competition mindset at very young age. 
-          We not only examine their dance but also their knowledge on the art with theory examinations and viva voice</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonial-section">
-  <div class="testimonial-overlay"></div>
-  <div class="testimonial-container">
-    <!-- Left Side -->
-    <div class="testimonial-left">
-      <h2>What Our Students Say</h2>
-    </div>
-
-    <!-- Right Side -->
-    <div class="testimonial-right">
-      <div class="testimonial-slider">
-        <div class="testimonial active">
-          <p>
-            I started my dance class after a long break almost 25yrs.I was very
-            skeptical about the classes if I would be able to do it ..but Deepa
-            (my sweet & loving Guru) was always supportive & encouraging. She
-            makes sure we enjoy the class and makes it so lively … Dhanya ma’am’s
-            corrections and comments are very helpful …thoroughly enjoying my
-            mohiniyattam classes…I am so delighted to be a part of Salabhanjika
-          </p>
-          <span>- Maya</span>
+  <section class="about-section">
+    <div class="about-container">
+      <!-- Left Image Slider -->
+      <div class="image-slider">
+        <div class="slides">
+          <img src="images/ssap7 (1).jpg" alt="Image 1">
+          <img src="images/ssap6.jpg" alt="Image 2">
+          <img src="images/ssap5.jpg" alt="Image 3">
+          <img src="images/ssap4.jpg" alt="Image 4">
+          <img src="images/ssap3.jpg" alt="Image 5">
+          <img src="images/ssap2.jpg" alt="Image 6">
+          <img src="images/ssap1.jpg" alt="Image 7">
         </div>
+        <!-- Navigation -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
 
-        <div class="testimonial">
-          <p>
-            Hai It was joyful experience being a part of saalabhanjika for the
-            past 1 year ..i am happy that i am able to fulfill one of my
-            dreams..for me a teacher is a light to our dream path…nandu being so
-            younger to me and a teacher in all means.. she is a guide,friend .a
-            lovely, patient charcter which is a perfect symbol of teacher…i have
-            got few issues with my legs which is now reducing ..as her tips works
-            in all ways…nandu i am so happy and proud that you are my
-            ‘Teacher’….love you to the bottom of the heart…Thanks to all your
-            efforts and hardwork for the classes..
-          </p>
-          <span>- Anjali</span>
+      <!-- Right About Box -->
+      <div class="about-box">
+        <h2>About Us</h2>
+        <h4>_________</h4><br>
+        <p>
+          Saalabhanjika Studio for Arts and Performance is a non-profitable organisation
+          specialized in imparting training in south Indian classical Art forms to budding artists.
+        </p>
+        <p>
+          Our vision is to develop it into a world class organization, extending training in both theory
+          and practice of each branch of fine arts. The primary objective is to enhance the quality of
+          communication in the media related to histrionics and reintegrate learning and research to the
+          presentation, performance and application of dance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Streams Section -->
+  <section class="streams-section">
+    <div class="overlay">
+      <h1 class="streams-heading">Streams</h1>
+      <ul class="streams-list">
+        <li><a href="#">Bharathanatiyam</a></li>
+        <li><a href="#">Kuchipudi</a></li>
+        <li><a href="#">Mohiniyattam</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Violin</a></li>
+        <li><a href="#">Mrudangam</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section -->
+  <section class="art-section">
+    <div class="art-container">
+      <!-- Left Column -->
+      <div class="art-left">
+        <img src="images/Screenshot-2021-08-25-162507.jpg" alt="Left Image" class="left-img" />
+
+        <p class="art-text">
+          Ente Salabhanjika is a collection of the inspiring and creative journeys
+          of artists and art forms across different parts of India. Our focus is on
+          shining a light on the vibrant art and culture of India. With a deep rooted
+          cultural heritage, India has one of the world’s largest collections of music,
+          dance, theatre, folk arts, literary arts and festivals.
+        </p>
+
+        <a href="https://entesalabhanjika.com/" target="_blank" class="view-btn">
+          View More
+        </a>
+      </div>
+
+      <!-- Right Column -->
+      <div class="art-right">
+        <img src="images/book-font.jpg" alt="Right Image" class="right-img" />
+      </div>
+    </div>
+  </section>
+
+  <section class="festival-section">
+    <div class="festival-grid">
+      <!-- Item 1 -->
+      <div class="festival-item">
+        <div class="festival-image">
+          <img src="images/devadasyam-logo.jpg" alt="Festival 1">
+          <a href="https://devadasyam.salabhanjika.com/" class="details-btn">Details</a>
         </div>
-
-        <div class="testimonial">
-          <p>
-            Me and my daughter are students of Saalabhanjika since last 6 years.
-            It has been a long term desire for me to learn dance which I was able
-            to fulfill upon joining Saalabhanjika.They gave us several
-            opportunities to perform in stages and supported us a lot. Our mentors
-            Dhanya Mam and Deepa Mam have been a great source of encouragement and
-            motivation which helped us evolve new personalities.We are really
-            proud to be a part of Saalabhanjika.
-          </p>
-          <span>- Lakshmi Devi and Anupama Nishanth</span>
+        <div class="festival-text">
+          <h4>Festivals - Devadaasyam</h4><br>
+          <p>Festival is intended to expose introduce the different art forms and cultural rituals to the coming
+            generations.</p>
         </div>
       </div>
 
-      <!-- Dots -->
-      <div class="testimonial-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <!-- Item 2 -->
+      <div class="festival-item">
+        <div class="festival-image">
+          <img src="images/bhama-kalapam-1.jpg" alt="Festival 2">
+          <a href="#" class="details-btn">Details</a>
+        </div>
+        <div class="festival-text">
+          <h4>Productions</h4><br>
+          <p>Stage performance is one of the most important part of these arts.
+            We provide our children a great opportunity to perform on different stage even from their beginning stage.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="festival-item">
+        <div class="festival-image">
+          <img src="images/workshop-final.jpg" alt="Festival 3">
+          <a href="#" class="details-btn">Details</a>
+        </div>
+        <div class="festival-text">
+          <h4>Workshops</h4><br>
+          <p>We introduce children to our traditional art
+            forms specially the art of scripting a text and enacting it in any art or dance form</p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="festival-item">
+        <div class="festival-image">
+          <img src="images/scdc-final.jpg" alt="Festival 4">
+          <a href="#" class="details-btn">Details</a>
+        </div>
+        <div class="festival-text">
+          <h4>Competitions</h4><br>
+          <p>It is very important for children to develop a friendly competition mindset at very young age.
+            We not only examine their dance but also their knowledge on the art with theory examinations and viva voice
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="blog-section">
+  <section class="testimonial-section">
+    <div class="testimonial-overlay"></div>
+    <div class="testimonial-container">
+      <!-- Left Side -->
+      <div class="testimonial-left">
+        <h2>What Our Students Say</h2>
+      </div>
+
+      <!-- Right Side -->
+      <div class="testimonial-right">
+        <div class="testimonial-slider">
+          <div class="testimonial active">
+            <p>
+              I started my dance class after a long break almost 25yrs.I was very
+              skeptical about the classes if I would be able to do it ..but Deepa
+              (my sweet & loving Guru) was always supportive & encouraging. She
+              makes sure we enjoy the class and makes it so lively … Dhanya ma’am’s
+              corrections and comments are very helpful …thoroughly enjoying my
+              mohiniyattam classes…I am so delighted to be a part of Salabhanjika
+            </p>
+            <span>- Maya</span>
+          </div>
+
+          <div class="testimonial">
+            <p>
+              Hai It was joyful experience being a part of saalabhanjika for the
+              past 1 year ..i am happy that i am able to fulfill one of my
+              dreams..for me a teacher is a light to our dream path…nandu being so
+              younger to me and a teacher in all means.. she is a guide,friend .a
+              lovely, patient charcter which is a perfect symbol of teacher…i have
+              got few issues with my legs which is now reducing ..as her tips works
+              in all ways…nandu i am so happy and proud that you are my
+              ‘Teacher’….love you to the bottom of the heart…Thanks to all your
+              efforts and hardwork for the classes..
+            </p>
+            <span>- Anjali</span>
+          </div>
+
+          <div class="testimonial">
+            <p>
+              Me and my daughter are students of Saalabhanjika since last 6 years.
+              It has been a long term desire for me to learn dance which I was able
+              to fulfill upon joining Saalabhanjika.They gave us several
+              opportunities to perform in stages and supported us a lot. Our mentors
+              Dhanya Mam and Deepa Mam have been a great source of encouragement and
+              motivation which helped us evolve new personalities.We are really
+              proud to be a part of Saalabhanjika.
+            </p>
+            <span>- Lakshmi Devi and Anupama Nishanth</span>
+          </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="testimonial-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-section">
     <h2>Our Blog</h2>
     <div class="line"></div><br><br>
 
@@ -747,251 +841,254 @@
         <h5>UNCATEGORIZED</h5><br>
         <p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!
         </p>
-      </div>    
+      </div>
     </div><br><br>
     <a href="#" class="btn">View More</a>
   </section>
 
-<section class="final-section">
-  <h2>Blessed By</h2>
-  <div class="line"></div>
+  <section class="final-section">
+    <h2>Blessed By</h2>
+    <div class="line"></div>
 
-  <!-- 1️⃣ Left Image - Right Content -->
-  <div class="blessed-container">
-    <div class="blessed-left">
-      <img src="images/IMG_4426-2-scaled.jpg" alt="Blessed Person">
-    </div>
-    <div class="blessed-right">
-      <div class="person">
-        <p><strong>Late. Manikkath Venugopal Menon</strong><br>
-          Mr. Manikketh Venugopal Menon was a distinguished banker and community leader from Thrissur. 
-          A Zoology graduate, he served in the United Bank of India and retired as Deputy Regional Manager. 
-          He later became Director of Avanzo Cyber Security Solutions and Trustee of Avanzo Charitable Trust. 
-          His life of dedication and integrity continues to inspire all who knew him, until his passing in 2018.
-        </p>
+    <!-- 1️⃣ Left Image - Right Content -->
+    <div class="blessed-container">
+      <div class="blessed-left">
+        <img src="images/IMG_4426-2-scaled.jpg" alt="Blessed Person">
+      </div>
+      <div class="blessed-right">
+        <div class="person">
+          <p><strong>Late. Manikkath Venugopal Menon</strong><br>
+            Mr. Manikketh Venugopal Menon was a distinguished banker and community leader from Thrissur.
+            A Zoology graduate, he served in the United Bank of India and retired as Deputy Regional Manager.
+            He later became Director of Avanzo Cyber Security Solutions and Trustee of Avanzo Charitable Trust.
+            His life of dedication and integrity continues to inspire all who knew him, until his passing in 2018.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 2️⃣ Right Image - Left Content -->
-  <div class="blessed-container">
-    <div class="blessed-left">
-      <img src="images/gallery_ezine_5a349f81c7a90_image.jpg" alt="Blessed Image">
-    </div>
-    <div class="blessed-right">
-      <div class="person">
-        <p><strong>Late. Sri. K K Varrier</strong><br>
-          Mr. K. K. Varrier was a renowned Kerala mural artist known for his exceptional contributions 
-          to traditional art. He founded the Indian School of Arts in Kochi and Chitrageham in Guruvayur, 
-          nurturing generations of artists. His works reflect the depth and spirituality of Kerala’s 
-          mural heritage. His artistic vision continues to inspire many, even after his passing in 2010.
-        </p>
+    <!-- 2️⃣ Right Image - Left Content -->
+    <div class="blessed-container">
+      <div class="blessed-left">
+        <img src="images/gallery_ezine_5a349f81c7a90_image.jpg" alt="Blessed Image">
+      </div>
+      <div class="blessed-right">
+        <div class="person">
+          <p><strong>Late. Sri. K K Varrier</strong><br>
+            Mr. K. K. Varrier was a renowned Kerala mural artist known for his exceptional contributions
+            to traditional art. He founded the Indian School of Arts in Kochi and Chitrageham in Guruvayur,
+            nurturing generations of artists. His works reflect the depth and spirituality of Kerala’s
+            mural heritage. His artistic vision continues to inspire many, even after his passing in 2010.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 3️⃣ Left Image - Right Content -->
-  <div class="blessed-container">
-    <div class="blessed-left">
-      <img src="images/imagesvijaya.jpeg" alt="Blessed Person">
-    </div>
-    <div class="blessed-right">
-      <div class="person">
-        <p><strong>Late. Vijayakumar Menon</strong><br>
-          Vijayakumar Menon (3 May 1946 – 1 November 2022) was an Indian art critic, writer, translator, 
-          and art teacher from Kerala. He was honored with several awards, including the Kerala Lalithakala 
-          Akademi Award and the Kesari Puraskaram. After working at FACT, he pursued Art History at 
-          MS University, Baroda, and later taught in various fine arts institutions. Menon lived a simple, 
-          spiritual life at Jnana Ashram, Wadakkanchery, until his passing in 2022.
-        </p>
+    <!-- 3️⃣ Left Image - Right Content -->
+    <div class="blessed-container">
+      <div class="blessed-left">
+        <img src="images/imagesvijaya.jpeg" alt="Blessed Person">
+      </div>
+      <div class="blessed-right">
+        <div class="person">
+          <p><strong>Late. Vijayakumar Menon</strong><br>
+            Vijayakumar Menon (3 May 1946 – 1 November 2022) was an Indian art critic, writer, translator,
+            and art teacher from Kerala. He was honored with several awards, including the Kerala Lalithakala
+            Akademi Award and the Kesari Puraskaram. After working at FACT, he pursued Art History at
+            MS University, Baroda, and later taught in various fine arts institutions. Menon lived a simple,
+            spiritual life at Jnana Ashram, Wadakkanchery, until his passing in 2022.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<style>
-.final-section {
-  padding: 60px 20px;
-  background-color: #fff;
-}
-
-.final-section h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  color: #222;
-}
-
-.line {
-  width: 100px;
-  height: 3px;
-  background-color: #0078ff;
-  margin: 15px auto 40px;
-}
-
-.blessed-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
-}
-
-.blessed-left, .blessed-right {
-  flex: 1;
-  min-width: 300px;
-}
-
-.blessed-left img, 
-.blessed-right img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.person {
-  margin: 10px 0;
-}
-
-.person p {
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.person strong {
-  font-size: 1.1rem;
-  color: #000;
-}
-
-/* Alternate layout styles */
-.blessed-container:nth-of-type(even) {
-  flex-direction: row-reverse;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .blessed-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .blessed-left, .blessed-right {
-    width: 100%;
-  }
-  .blessed-left img, 
-  .blessed-right img {
-    max-width: 80%;
-    margin: 0 auto 20px;
-  }
-}
-</style>
-<!-- FEEDBACK SECTION -->
-<section class="feedback-section">
-  <h2 class="feedback-title">Feedback</h2>
-
-  <div class="feedback-scroll auto-scroll">
-    <div class="feedback-card"><img src="images/1 (1).png"></div>
-    <div class="feedback-card"><img src="images/2.png"></div>
-    <div class="feedback-card"><img src="images/3.png"></div>
-    <div class="feedback-card"><img src="images/4.png"></div>
-    <div class="feedback-card"><img src="images/5.png"></div>
-    <div class="feedback-card"><img src="images/6.png"></div>
-    <div class="feedback-card"><img src="images/7.png"></div>
-  </div>
   <style>
-/* ================= FEEDBACK SECTION ================= */
-.feedback-section {
-  padding: 60px 20px;
-  background: #f8f8f8;
-  overflow: hidden;
-}
+    .final-section {
+      padding: 60px 20px;
+      background-color: #fff;
+    }
 
-.feedback-title {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 30px;
-}
+    .final-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #222;
+    }
 
-/* SCROLL WRAPPER */
-.feedback-scroll {
-  display: flex;
-  gap: 30px;
-  width: max-content;
-}
+    .line {
+      width: 100px;
+      height: 3px;
+      background-color: #0078ff;
+      margin: 15px auto 40px;
+    }
 
-/* AUTO SCROLL */
-.auto-scroll {
-  animation: scrollLeft 35s linear infinite;
-}
+    .blessed-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
 
-.auto-scroll:hover {
-  animation-play-state: paused;
-}
+    .blessed-left,
+    .blessed-right {
+      flex: 1;
+      min-width: 300px;
+    }
 
-/* CARD */
-.feedback-card {
-  width: 360px;
-  height: 260px;
-  background: white;
-  padding: 16px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .blessed-left img,
+    .blessed-right img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-/* IMAGE CLARITY */
-.feedback-card img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
+    .person {
+      margin: 10px 0;
+    }
 
-/* ANIMATION */
-@keyframes scrollLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+    .person p {
+      font-size: 1rem;
+      line-height: 1.7;
+      text-align: justify;
+    }
 
+    .person strong {
+      font-size: 1.1rem;
+      color: #000;
+    }
 
-</style>
+    /* Alternate layout styles */
+    .blessed-container:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
 
-</section>
+    /* Responsive */
+    @media (max-width: 768px) {
+      .blessed-container {
+        flex-direction: column;
+        text-align: center;
+      }
 
+      .blessed-left,
+      .blessed-right {
+        width: 100%;
+      }
 
-<section class="enroll-section">
-  <div class="enroll-container">
-    <div class="enroll-left">
-      <h2>Enroll Now</h2>
+      .blessed-left img,
+      .blessed-right img {
+        max-width: 80%;
+        margin: 0 auto 20px;
+      }
+    }
+  </style>
+  <!-- FEEDBACK SECTION -->
+  <section class="feedback-section">
+    <h2 class="feedback-title">Feedback</h2>
+
+    <div class="feedback-scroll auto-scroll">
+      <div class="feedback-card"><img src="images/1 (1).png"></div>
+      <div class="feedback-card"><img src="images/2.png"></div>
+      <div class="feedback-card"><img src="images/3.png"></div>
+      <div class="feedback-card"><img src="images/4.png"></div>
+      <div class="feedback-card"><img src="images/5.png"></div>
+      <div class="feedback-card"><img src="images/6.png"></div>
+      <div class="feedback-card"><img src="images/7.png"></div>
     </div>
-    <div class="enroll-right">
-      <a href="#" class="footer-btn">View More</a>
+    <style>
+      /* ================= FEEDBACK SECTION ================= */
+      .feedback-section {
+        padding: 60px 20px;
+        background: #f8f8f8;
+        overflow: hidden;
+      }
+
+      .feedback-title {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+
+      /* SCROLL WRAPPER */
+      .feedback-scroll {
+        display: flex;
+        gap: 30px;
+        width: max-content;
+      }
+
+      /* AUTO SCROLL */
+      .auto-scroll {
+        animation: scrollLeft 35s linear infinite;
+      }
+
+      .auto-scroll:hover {
+        animation-play-state: paused;
+      }
+
+      /* CARD */
+      .feedback-card {
+        width: 360px;
+        height: 260px;
+        background: white;
+        padding: 16px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* IMAGE CLARITY */
+      .feedback-card img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      /* ANIMATION */
+      @keyframes scrollLeft {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+
+  </section>
+
+
+  <section class="enroll-section">
+    <div class="enroll-container">
+      <div class="enroll-left">
+        <h2>Enroll Now</h2>
+      </div>
+      <div class="enroll-right">
+        <a href="#" class="footer-btn">View More</a>
+      </div>
     </div>
-  </div>
-  
-  <div class="social-icons">
-  <a href="https://facebook.com" target="_blank">
-    <img src="images/InShot_20250826_193953704.png" alt="Facebook">
-  </a>
-  <a href="https://twitter.com" target="_blank">
-    <img src="images/InShot_20250826_193938982.png" alt="Twitter">
-  </a>
-  <a href="https://instagram.com" target="_blank">
-    <img src="images/InShot_20250826_194004429.png" alt="Instagram">
-  </a>
-</div>
-</section>
+
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">
+        <img src="images/InShot_20250826_193953704.png" alt="Facebook">
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <img src="images/InShot_20250826_193938982.png" alt="Twitter">
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <img src="images/InShot_20250826_194004429.png" alt="Instagram">
+      </a>
+    </div>
+  </section>
 
 
 
   <script>
     // Shrink effect on scroll
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
       const header = document.getElementById("header");
       if (window.scrollY > 50) {
         header.classList.add("shrink");
@@ -1009,127 +1106,128 @@
   </script>
 
   <!-- add this script (keep it after your section, near the end of body) -->
-<script>
-  (function () {
-    const left = document.querySelector('.mission-left');
-    const bg = document.querySelector('.mission-left .bg-image');
+  <script>
+    (function () {
+      const left = document.querySelector('.mission-left');
+      const bg = document.querySelector('.mission-left .bg-image');
 
-    function parallax() {
-      if (!left || !bg) return;
-      const rect = left.getBoundingClientRect();
-      const vh = window.innerHeight || document.documentElement.clientHeight;
+      function parallax() {
+        if (!left || !bg) return;
+        const rect = left.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
 
-      // progress: -0.5 .. 0.5 around the center of the left column
-      const progress = ((vh / 2) - (rect.top + rect.height / 2)) / vh;
-      const offset = progress * 120; // px movement; tweak 120 for more/less
+        // progress: -0.5 .. 0.5 around the center of the left column
+        const progress = ((vh / 2) - (rect.top + rect.height / 2)) / vh;
+        const offset = progress * 120; // px movement; tweak 120 for more/less
 
-      bg.style.transform = `scale(1.25) translateY(${offset}px)`;
+        bg.style.transform = `scale(1.25) translateY(${offset}px)`;
+      }
+
+      window.addEventListener('scroll', parallax, { passive: true });
+      window.addEventListener('resize', parallax);
+      parallax();
+    })();
+  </script>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(n) {
+      if (n < 0) index = images.length - 1;
+      else if (n >= images.length) index = 0;
+      else index = n;
+      slides.style.transform = `translateX(${-index * 100}%)`;
     }
 
-    window.addEventListener('scroll', parallax, { passive: true });
-    window.addEventListener('resize', parallax);
-    parallax();
-  })();
-</script>
+    prevBtn.addEventListener('click', () => showSlide(index - 1));
+    nextBtn.addEventListener('click', () => showSlide(index + 1));
+  </script>
 
-<script>
-const slides = document.querySelector('.slides');
-const images = document.querySelectorAll('.slides img');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let index = 0;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const img = document.querySelector('.streams-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            img.classList.add('show');
+          }
+        });
+      });
+      observer.observe(img);
+    });
+  </script>
 
-function showSlide(n) {
-  if (n < 0) index = images.length - 1;
-  else if (n >= images.length) index = 0;
-  else index = n;
-  slides.style.transform = `translateX(${-index * 100}%)`;
-}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const img = document.querySelector('.right-img');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            img.classList.add('show');
+          }
+        });
+      });
+      observer.observe(img);
+    });
+  </script>
 
-prevBtn.addEventListener('click', () => showSlide(index - 1));
-nextBtn.addEventListener('click', () => showSlide(index + 1));
-</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const img = document.querySelector('.festival-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            img.classList.add('show');
+          }
+        });
+      });
+      observer.observe(img);
+    });
+  </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const img = document.querySelector('.streams-section');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        img.classList.add('show');
+  <script>
+    (() => {
+      const testimonials = document.querySelectorAll(".testimonial");
+      const dots = document.querySelectorAll(".dot");
+      let testimonialIndex = 0;  // ⬅️ renamed
+
+      function showTestimonial(i) {
+        testimonials.forEach((t, j) => {
+          t.classList.toggle("active", j === i);
+          dots[j].classList.toggle("active", j === i);
+        });
       }
-    });
-  });
-  observer.observe(img);
-});
-</script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const img = document.querySelector('.right-img');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        img.classList.add('show');
+      function nextTestimonial() {
+        testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+        showTestimonial(testimonialIndex);
       }
-    });
-  });
-  observer.observe(img);
-});
-</script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const img = document.querySelector('.festival-section');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        img.classList.add('show');
+      // optional: click dots to jump
+      dots.forEach((d, i) => {
+        d.addEventListener("click", () => {
+          testimonialIndex = i;
+          showTestimonial(testimonialIndex);
+          resetTimer();
+        });
+      });
+
+      let timer = setInterval(nextTestimonial, 5000);
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(nextTestimonial, 5000);
       }
-    });
-  });
-  observer.observe(img);
-});
-</script>
 
-<script>
-(() => {
-  const testimonials = document.querySelectorAll(".testimonial");
-  const dots = document.querySelectorAll(".dot");
-  let testimonialIndex = 0;  // ⬅️ renamed
-
-  function showTestimonial(i) {
-    testimonials.forEach((t, j) => {
-      t.classList.toggle("active", j === i);
-      dots[j].classList.toggle("active", j === i);
-    });
-  }
-
-  function nextTestimonial() {
-    testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-    showTestimonial(testimonialIndex);
-  }
-
-  // optional: click dots to jump
-  dots.forEach((d, i) => {
-    d.addEventListener("click", () => {
-      testimonialIndex = i;
+      // init
       showTestimonial(testimonialIndex);
-      resetTimer();
-    });
-  });
-
-  let timer = setInterval(nextTestimonial, 5000);
-  function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(nextTestimonial, 5000);
-  }
-
-  // init
-  showTestimonial(testimonialIndex);
-})();
-</script>
+    })();
+  </script>
 
 
 </body>
+
 </html>
