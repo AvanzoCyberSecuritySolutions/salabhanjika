@@ -99,15 +99,16 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .production-section .row {
-    flex-direction: column;
-  }
+  .production-section .row,
   .production-section .row.reverse {
     flex-direction: column;
   }
   .production-section .text, 
   .production-section .image {
     padding: 10px;
+  }
+  .production-section .image {
+    order: -1;
   }
   .production-section .text h2 {
     font-size: 22px;

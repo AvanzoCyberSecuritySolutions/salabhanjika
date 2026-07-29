@@ -100,15 +100,16 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .workshops-section .row {
-    flex-direction: column;
-  }
+  .workshops-section .row,
   .workshops-section .row.reverse {
     flex-direction: column;
   }
   .workshops-section .text, 
   .workshops-section .image {
     padding: 10px;
+  }
+  .workshops-section .image {
+    order: -1;
   }
   .workshops-section .text h2 {
     font-size: 22px;
