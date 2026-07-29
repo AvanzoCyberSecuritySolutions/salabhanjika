@@ -103,7 +103,14 @@
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
+      header {
+        padding: 10px 20px;
+      }
+      .logo img {
+        margin-left: 0;
+      }
+
       nav ul {
         display: none;
         flex-direction: column;
@@ -128,7 +135,7 @@
       }
     }
 
-    @media (min-width: 769px) {
+    @media (min-width: 993px) {
       .menu-toggle {
         display: none;
       }
