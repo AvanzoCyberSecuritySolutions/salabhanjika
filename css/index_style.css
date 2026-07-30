@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* full screen */
+    min-height: 100vh; /* full screen minimum, can grow */
     width: 100%;
     padding-top: 120px; /* to avoid overlap with header */
     padding-left: 120px;
@@ -19,7 +19,7 @@
   }
 
   .hero-left h1 {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 5vw, 5rem);
     font-weight: 900;
     line-height: 1.2;
     padding: 20px;
